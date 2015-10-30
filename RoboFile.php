@@ -65,9 +65,9 @@ class RoboFile extends \Robo\Tasks
 			->arg('--debug')
 			->arg('--fail-fast')
 			->arg('tests/acceptance/install/')
-			->run()
-			->stopOnFail();
-
+			->run();
+			//->stopOnFail();
+		/*	
 		$this->taskCodecept()
 			->arg('--steps')
 			->arg('--debug')
@@ -83,7 +83,7 @@ class RoboFile extends \Robo\Tasks
 			->arg('tests/acceptance/frontend/')
 			->run()
 			->stopOnFail();
-
+		*/
 		// Kill selenium server
 		// $this->_exec('curl http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer');
 
