@@ -284,10 +284,10 @@ class RoboFile extends \Robo\Tasks
 
 	public function dumpPhpVersion()
 	{
-		$this->_exec('ls ./tests/_output/');
+		//$this->_exec('ls ./tests/_output/');
 
-		//$error_page = strip_tags(file_get_contents('./tests/_output/InstallWeblinksCest.installJoomla.fail.html'));
-		//$this->say($error_page);
+		$error_page = strip_tags(file_get_contents('./tests/_output/InstallWeblinksCest.installWeblinks.fail.html'));
+		$this->say($error_page);
 	}
 
 }
