@@ -190,7 +190,7 @@ class RoboFile extends \Robo\Tasks
 		$this->_copyDir('tests/cache', $this->cmsPath);
 		
 		// Optionally change owner to fix permissions issues
-		if (!empty($this->configuration->localUser) && !$this->isWindows())
+		if (!empty($this->configuration->localUser))
 		{
 			$this->_exec('chown -R ' . $this->configuration->localUser . ' ' . $this->cmsPath);
 		}
