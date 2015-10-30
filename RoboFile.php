@@ -189,7 +189,7 @@ class RoboFile extends \Robo\Tasks
 		// Copy cache to the testing folder
 		$this->_copyDir('tests/cache', $this->cmsPath);
 
-		$this->_exec('ls -la');
+		$this->_exec('ls -la ' . $this->cmsPath);
 
 		$this->say('Joomla CMS site created at ' . $this->cmsPath);
 	}
