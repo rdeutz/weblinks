@@ -4,6 +4,7 @@ build:
     - composer install --prefer-dist --no-interaction --no-progress
     - cp tests/acceptance.suite.dist.yml tests/acceptance.suite.yml
     - cp RoboFile.dist.ini RoboFile.ini
+    - ls -la 
     - apache2ctl restart
     - mysqld &
     - export DISPLAY=:0
