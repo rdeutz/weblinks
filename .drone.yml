@@ -1,10 +1,9 @@
 build:
-  image: yveshoppe/joomla-systemtests
+  image: rdeutz/docker-systemtests
   commands:
     - composer install --prefer-dist --no-interaction --no-progress
     - cp tests/acceptance.suite.dist.yml tests/acceptance.suite.yml
     - cp RoboFile.dist.ini RoboFile.ini
-    - chmod -R 777 *
     - ls -la 
     - apache2ctl restart
     - mysqld &
