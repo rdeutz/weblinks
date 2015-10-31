@@ -4,7 +4,7 @@ build:
     - composer install --prefer-dist --no-interaction --no-progress
     - cp tests/acceptance.suite.dist.yml tests/acceptance.suite.yml
     - cp RoboFile.dist.ini RoboFile.ini
-    - ls -l /etc/apache2/sites-enabled/
+    - cat /etc/apache2/sites-enabled/000-default.conf
     - apache2ctl restart
     - mysqld &
     - export DISPLAY=:0
