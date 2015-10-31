@@ -195,6 +195,8 @@ class RoboFile extends \Robo\Tasks
 			$this->_exec('chown -R ' . $this->configuration->localUser . ' ' . $this->cmsPath);
 		}
 
+		$this->_exec('ls -l ' . $this->cmsPath);	
+
 		$this->say('Joomla CMS site created at ' . $this->cmsPath);
 	}
 
