@@ -49,7 +49,8 @@ class RoboFile extends \Robo\Tasks
 		$this->cmsPath = $this->getCmsPath();
 
 		$this->setExecExtension();
-		$this->_exec('pwd');	
+		$this->_exec('pwd');
+		$this->_exec('ls -l');
 		$this->createTestingSite();
 		$this->_exec('pwd');
 		$this->getComposer();
