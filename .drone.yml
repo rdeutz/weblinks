@@ -5,7 +5,7 @@ build:
     - cp tests/acceptance.suite.dist.yml tests/acceptance.suite.yml
     - cp RoboFile.dist.ini RoboFile.ini
     - chmod -R 777 *
-    - ls -la ..
+    - ls -la 
     - apache2ctl restart
     - mysqld &
     - export DISPLAY=:0
