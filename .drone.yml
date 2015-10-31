@@ -12,6 +12,7 @@ build:
     - Xvfb -screen 0 1024x768x24 -ac +extension GLX +render -noreset > /dev/null 2>&1 &
     - sleep 4 # give xvfb some time to start
     - fluxbox &
+    - ps -ef|grep mysql
     - ./vendor/bin/robo run:tests
     - ./vendor/bin/robo dump:php-version
 clone:
