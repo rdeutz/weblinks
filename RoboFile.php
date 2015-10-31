@@ -49,10 +49,9 @@ class RoboFile extends \Robo\Tasks
 		$this->cmsPath = $this->getCmsPath();
 
 		$this->setExecExtension();
-		$this->_exec('pwd');
-		$this->_exec('ls -l');
+
 		$this->createTestingSite();
-		$this->_exec('pwd');
+
 		$this->getComposer();
 
 		$this->taskComposerInstall()->run();
@@ -67,8 +66,8 @@ class RoboFile extends \Robo\Tasks
 			->arg('--fail-fast')
 			->arg('tests/acceptance/install/')
 			->run();
-			//->stopOnFail();
-		/*	
+			->stopOnFail();
+		
 		$this->taskCodecept()
 			->arg('--steps')
 			->arg('--debug')
@@ -84,7 +83,7 @@ class RoboFile extends \Robo\Tasks
 			->arg('tests/acceptance/frontend/')
 			->run()
 			->stopOnFail();
-		*/
+		
 		// Kill selenium server
 		// $this->_exec('curl http://localhost:4444/selenium-server/driver/?cmd=shutDownSeleniumServer');
 
