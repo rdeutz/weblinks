@@ -4,15 +4,13 @@ build:
     - cp tests/acceptance.suite.dist.yml tests/acceptance.suite.yml
     - cp RoboFile.dist.ini RoboFile.ini
     - composer install --prefer-dist --no-interaction --no-progress
-    - ls -l /
     - apache2ctl restart
     - mysqld &
     - export DISPLAY=:0
     - Xvfb -screen 0 1024x768x24 -ac +extension GLX +render -noreset > /dev/null 2>&1 &
     - sleep 4 # give xvfb some time to start
     - fluxbox &
-    - ./vendor/bin/robo startcontainer
-    # - ./vendor/bin/robo run:tests
+    - ./vendor/bin/robo run:tests
 clone:
   depth: 1
   path: repo
