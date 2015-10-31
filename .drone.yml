@@ -1,10 +1,9 @@
 build:
   image: rdeutz/docker-systemtests
   commands:
-    - composer install --prefer-dist --no-interaction --no-progress
     - cp tests/acceptance.suite.dist.yml tests/acceptance.suite.yml
     - cp RoboFile.dist.ini RoboFile.ini
-    - cat /etc/apache2/sites-enabled/000-default.conf
+    - composer install --prefer-dist --no-interaction --no-progress
     - apache2ctl restart
     - mysqld &
     - export DISPLAY=:0
