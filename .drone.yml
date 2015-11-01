@@ -6,12 +6,15 @@ build:
     - composer install --prefer-dist --no-interaction --no-progress
     - apache2ctl restart
     - mysqld &
+    - sleep 4
     - ps -ef |grep mysql
-    - export DISPLAY=:0
-    - Xvfb -screen 0 1024x768x24 -ac +extension GLX +render -noreset > /dev/null 2>&1 &
-    - sleep 4 # give xvfb some time to start
-    - fluxbox &
-    - ./vendor/bin/robo run:tests
+    - ls -l /var/log/mysql/
+    - cat /var/log/mysql/error.log
+    #- export DISPLAY=:0
+    #- Xvfb -screen 0 1024x768x24 -ac +extension GLX +render -noreset > /dev/null 2>&1 &
+    #- sleep 4 # give xvfb some time to start
+    #- fluxbox &
+    #- ./vendor/bin/robo run:tests
 clone:
   depth: 1
   path: repo
